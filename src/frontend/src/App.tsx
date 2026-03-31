@@ -41,6 +41,9 @@ import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { useActor } from "./hooks/useActor";
 
+const LOGO_URL =
+  "/assets/uploads/image-019d25c8-845c-7150-b772-78c0bdea31fd-1.png";
+
 // ─── Nav ────────────────────────────────────────────────────────────────────
 function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -73,14 +76,11 @@ function Nav() {
           className="flex items-center gap-3"
           data-ocid="nav.link"
         >
-          <div className="w-9 h-9 bg-foreground flex items-center justify-center">
-            <span className="text-background font-serif text-sm font-bold tracking-tight">
-              H/E
-            </span>
-          </div>
-          <span className="font-serif text-lg font-semibold tracking-wide text-foreground hidden sm:block">
-            HORIZON ENCLAVE
-          </span>
+          <img
+            src={LOGO_URL}
+            alt="The Horizon Infra"
+            className="h-12 w-auto object-contain"
+          />
         </a>
 
         {/* Desktop Nav */}
@@ -187,7 +187,7 @@ function Hero() {
         >
           8 premium independent floors. Central park concept. Private parking.
           <br className="hidden md:block" />
-          12–18 month exit. ROI up to 100%+.
+          2–3 year project completion. ROI up to 180%+.
         </p>
         <div
           className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up"
@@ -219,13 +219,13 @@ function Hero() {
       <div className="relative z-10 w-full max-w-5xl mx-auto px-6 mt-16 md:mt-20 pb-0">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {[
-            { label: "Projected ROI", value: "40–100%+", icon: TrendingUp },
+            { label: "Projected ROI", value: "110–180%+", icon: TrendingUp },
             {
               label: "Projected Profit",
-              value: "₹4–8.5 Cr",
+              value: "₹12–15.5 Cr",
               icon: IndianRupee,
             },
-            { label: "Exit Timeline", value: "12–18 Months", icon: Clock },
+            { label: "Project Timeline", value: "2–3 Years", icon: Clock },
           ].map((s) => (
             <div
               key={s.label}
@@ -308,7 +308,7 @@ function InvestmentOpportunity() {
     {
       icon: Target,
       title: "The Market Gap",
-      desc: "The ₹1.5–2 Cr segment sits at a sweet spot — too premium for mass developers, yet too accessible for villa-only projects. Horizon Enclave fills this gap with precision.",
+      desc: "The ₹2.8–3 Cr segment sits at a sweet spot — ultra-premium yet attainable, capturing buyers who want genuine luxury without the scale of a full villa project. Horizon Enclave fills this gap with precision.",
     },
     {
       icon: Zap,
@@ -360,10 +360,10 @@ function InvestmentOpportunity() {
 function FinancialHighlights() {
   const stats = [
     { icon: IndianRupee, label: "Total Investment", value: "₹8.5 – ₹10.5 Cr" },
-    { icon: BarChart2, label: "Projected Revenue", value: "₹14.4 – ₹17 Cr" },
-    { icon: TrendingUp, label: "Projected Profit", value: "₹4 – ₹8.5 Cr" },
-    { icon: Percent, label: "ROI", value: "40% – 100%+" },
-    { icon: Clock, label: "Timeline", value: "12–18 Months" },
+    { icon: BarChart2, label: "Projected Revenue", value: "₹22.4 – ₹24 Cr" },
+    { icon: TrendingUp, label: "Projected Profit", value: "₹12 – ₹15.5 Cr" },
+    { icon: Percent, label: "ROI", value: "110% – 180%+" },
+    { icon: Clock, label: "Project Timeline", value: "2–3 Years" },
   ];
 
   return (
@@ -584,13 +584,13 @@ function RevenueModel() {
               Unit Sales
             </h3>
             <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
-              Each of the 8 premium floors is priced competitively in the
-              high-demand ₹1.5–2.1 Cr segment, ensuring fast absorption and
-              strong returns.
+              Each of the 8 premium floors is priced in the ultra-luxury ₹2.8–3
+              Cr segment, ensuring strong capital appreciation and exceptional
+              returns for investors.
             </p>
             <div className="flex items-baseline gap-2">
               <span className="font-serif text-4xl font-bold text-foreground">
-                ₹1.8 – 2.1 Cr
+                ₹2.8 – 3 Cr
               </span>
               <span className="text-muted-foreground text-sm">per unit</span>
             </div>
@@ -599,7 +599,7 @@ function RevenueModel() {
                 Total projected revenue from 8 units
               </p>
               <p className="font-serif text-xl font-bold text-foreground mt-1">
-                ₹14.4 – ₹17 Cr
+                ₹22.4 – ₹24 Cr
               </p>
             </div>
           </div>
@@ -676,9 +676,9 @@ function WhyInvest() {
       desc: "Post-pandemic preferences for larger, private homes have created a sustained surge in demand for premium independent living options.",
     },
     {
-      icon: Zap,
-      title: "Fast Exit Potential",
-      desc: "Boutique luxury projects in prime locations historically sell out 40–60% faster than comparable projects, offering investors rapid capital recycling.",
+      icon: TrendingUp,
+      title: "Long-Term Value Growth",
+      desc: "Premium boutique developments in prime locations appreciate significantly over a 2–3 year completion cycle, offering investors strong long-term capital gains.",
     },
   ];
 
@@ -727,9 +727,12 @@ function AboutDeveloper() {
             <p className="text-xs tracking-[0.2em] text-brand uppercase font-semibold mb-4">
               The Developer
             </p>
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-1">
               The Horizon Infra
             </h2>
+            <p className="text-muted-foreground text-sm tracking-wider uppercase mb-6">
+              Est. 2020
+            </p>
             <p className="text-muted-foreground text-base leading-relaxed mb-4">
               The Horizon Infra is a premium real estate developer with an
               unwavering commitment to boutique developments that stand apart.
@@ -747,7 +750,7 @@ function AboutDeveloper() {
               {[
                 { label: "Projects Delivered", value: "12+" },
                 { label: "Happy Families", value: "200+" },
-                { label: "Years of Excellence", value: "8+" },
+                { label: "Years of Excellence", value: "5+" },
               ].map((s) => (
                 <div key={s.label}>
                   <p className="font-serif text-3xl font-bold text-foreground">
@@ -764,17 +767,19 @@ function AboutDeveloper() {
           {/* Visual accent */}
           <div className="relative">
             <div className="rounded-2xl overflow-hidden shadow-card-lg aspect-[4/3] bg-foreground flex items-center justify-center">
-              <div className="text-center">
-                <div className="w-24 h-24 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span className="font-serif text-4xl font-bold text-white">
-                    H/E
-                  </span>
+              <div className="text-center px-8">
+                <div className="flex items-center justify-center mb-6">
+                  <img
+                    src={LOGO_URL}
+                    alt="The Horizon Infra"
+                    className="h-20 w-auto object-contain brightness-0 invert"
+                  />
                 </div>
-                <p className="font-serif text-2xl font-bold text-white mb-2">
+                <p className="font-serif text-2xl font-bold text-white mb-1">
                   The Horizon Infra
                 </p>
                 <p className="text-white/50 text-sm tracking-widest uppercase">
-                  Est. 2016
+                  Est. 2020
                 </p>
                 <div className="mt-8 flex items-center justify-center gap-8">
                   {["Trust", "Quality", "Design"].map((v) => (
@@ -1067,17 +1072,17 @@ function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-9 h-9 bg-white flex items-center justify-center">
-                <span className="font-serif text-sm font-bold text-foreground">
-                  H/E
-                </span>
-              </div>
+              <img
+                src={LOGO_URL}
+                alt="The Horizon Infra"
+                className="h-10 w-auto object-contain brightness-0 invert"
+              />
               <div>
                 <p className="font-serif text-white font-semibold">
                   HORIZON ENCLAVE
                 </p>
                 <p className="text-white/40 text-xs tracking-wide">
-                  By The Horizon Infra
+                  By The Horizon Infra · Est. 2020
                 </p>
               </div>
             </div>
